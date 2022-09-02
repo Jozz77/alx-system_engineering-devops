@@ -1,0 +1,494 @@
+
+Skip to content
+
+Learn Linux in One Week and Go From Zero to Hero - Get This Book
+
+Home
+
+
+
+About
+
+
+
+eBooks
+
+
+
+Shop
+
+
+
+Donate
+
+
+
+Linux Online Courses
+
+
+
+Subscribe to Newsletter
+
+
+
+Linux Hosting
+
+
+
+A-Z Linux Commands
+
+
+
+Get Involved
+
+
+
+freestar
+
+Tecmint: Linux Howtos, Tutorials & Guides
+
+Linux Distro’s
+
+
+
+FAQ’s
+
+
+
+Programming
+
+
+
+Linux Commands
+
+
+
+Linux Tricks
+
+
+
+Best Linux Tools
+
+
+
+Certifications
+
+
+
+Guides
+
+
+
+Monitoring Tools
+
+
+
+How to Copy File Permissions and Ownership to Another File in Linux
+
+Aaron KiliFebruary 20, 2018 CategoriesLinux Commands 4 Comments
+
+
+
+freestar
+
+Assuming you have two files or you have just created a new file and want it to have the same permissions and ownership of an older file.
+
+
+
+In this article, we will show you how to copy permissions and ownership from one file to another file in Linux using chmod and chown commands respectively.
+
+
+
+Copy File Permissions to Another File
+
+To copy file permissions from one file to another file, use chmod command with the --reference switch in the following syntax, where reference_file is the file from which permissions will be copied rather than specifying mode (i.e octal or numerical mode permissions) for file.
+
+
+
+$ chmod --reference=reference_file file
+
+For example,
+
+
+
+$ ls -l users.list
+
+$ ls -l keys.list
+
+$ sudo chmod --reference=users.list keys.list
+
+$ ls -l keys.list
+
+Copy File Permissions to Another File
+
+Copy File Permissions to Another File
+
+Copy File Ownership to Another File
+
+Likewise, to copy ownership from another file, use chown command with the --reference switch as well using the following syntax, where reference_file is file from which owner and group will be copied rather than specifying owner:group values for file.
+
+
+
+$ chown --reference=reference_file file
+
+
+
+freestar
+
+For example,
+
+
+
+$ ls -l keys.list
+
+$ touch api.list
+
+$ ls -l keys.list
+
+$ sudo chown --reference=keys.list api.list
+
+$ ls -l api.list
+
+Copy File Ownership to Another File
+
+Copy File Ownership to Another File
+
+You can also copy file permissions and ownership from one file to multiple files as shown.
+
+
+
+$ sudo chmod --reference=users.list users1.list users2.list users3.list
+
+$ sudo chown --reference=users.list users1.list users2.list users3.list
+
+For more information, refer to the chown and chmod man pages.
+
+
+
+$ man chown
+
+$ man chmod
+
+You will also find these guides concerning file permissions to be useful:
+
+
+
+How to Manage Users and Groups in Linux
+
+Translate rwx Permissions into Octal Format in Linux
+
+How to Find Files With SUID and SGID Permissions in Linux
+
+That’s all! If you know any other way to copy or clone file permissions in Linux, do share with us via the feedback form below.
+
+
+
+TagsLinux Tricks
+
+Post navigation
+
+Cryptmount – A Utility to Create Encrypted Filesystems in Linux
+
+How to Install Java 14 in Ubuntu, Debian and Linux Mint
+
+If you liked this article, then do subscribe to email alerts for Linux tutorials. If you have any questions or doubts? do ask for help in the comments section.
+
+
+
+freestar
+
+If You Appreciate What We Do Here On TecMint, You Should Consider:
+
+TecMint is the fastest growing and most trusted community site for any kind of Linux Articles, Guides and Books on the web. Millions of people visit TecMint! to search or browse the thousands of published articles available FREELY to all.
+
+
+
+If you like what you are reading, please consider buying us a coffee ( or 2 ) as a token of appreciation.
+
+
+
+Support Us
+
+
+
+We are thankful for your never ending support.
+
+
+
+Related Posts
+
+fd Alternative to Find Command
+
+fd – A Simple and Fast Alternative to Find Command
+
+
+
+Find Linux Disk Partitions
+
+4 Ways to View Disks and Partitions in Linux
+
+
+
+Check Linux Configuration Files
+
+30 Ways to Validate Configuration Files or Scripts in Linux
+
+
+
+How to Create File in Linux
+
+8 Practical Examples of Linux “Touch” Command
+
+
+
+MysQL Backup/Restore Commands
+
+MySQL Backup and Restore Commands for Database Administration
+
+
+
+Run Command Without Saving in History
+
+How to Run a Linux Command Without Saving It in History
+
+
+
+4 thoughts on “How to Copy File Permissions and Ownership to Another File in Linux”
+
+
+
+Alexey
+
+February 21, 2018 at 4:24 pm
+
+Thank you for your article.
+
+
+
+May I use the “–reference=” key for folders, not only files?
+
+
+
+For example, to copy permissions or owner on catalog CATALOG1 with all files located in this folder to CATALOG2?
+
+
+
+Reply
+
+
+
+Aaron Kili
+
+February 22, 2018 at 1:35 pm
+
+@Alexey
+
+
+
+You are welcome.
+
+
+
+And you can copy the permissions and ownership of CATALOG1 to CATALOG2. Then use the -p flag of the cp command to preserve permissions and ownership while copying files from CATALOG1 to CATALOG2 like this:
+
+
+
+$ chown --reference=CATALOG1 CATALOG2
+
+$ chmod --reference=CATALOG1 CATALOG2
+
+$ cp -p ./CATALOG1/* ./CATALOG2/
+
+I hope this makes sense to you.
+
+
+
+Reply
+
+
+
+Alexey
+
+February 23, 2018 at 11:27 am
+
+Thank you again!
+
+
+
+Reply
+
+
+
+Aaron Kili
+
+February 24, 2018 at 2:01 pm
+
+@Alexey
+
+
+
+Your most welcome, once more. Thanks for following us.
+
+
+
+Reply
+
+Got something to say? Join the discussion.
+
+Have a question or suggestion? Please leave a comment to start the discussion. Please keep in mind that all comments are moderated and your email address will NOT be published.
+
+
+
+Comment
+
+Name
+
+Name *
+
+Email
+
+Email *
+
+ Save my name, email, and website in this browser for the next time I comment.
+ 
+
+
+
+
+freestar
+
+Over 3,500,000+ Readers
+
+
+
+Join TecMint on Facebook Follow TecMint on Twitter Join TecMint on LinkedIn Follow TecMint on Instagram Follow TecMint via RSS Feed Subscribe to TecMint Newsletter
+
+A Beginners Guide To Learn Linux for Free [with Examples]
+
+
+
+freestar
+
+Red Hat RHCSA/RHCE 8 Certification Study Guide [eBooks]
+
+Linux Foundation LFCS and LFCE Certification Study Guide [eBooks]
+
+Learn Linux Commands and Tools
+
+A Bash Script to Create a Bootable USB from ISO in Linux
+
+
+
+Learn How to Use ‘fuser’ Command with Examples in Linux
+
+
+
+How to Find My DNS Server IP Address in Linux
+
+
+
+Find Top 15 Processes by Memory Usage with ‘top’ in Batch Mode
+
+
+
+How to Start/Stop and Enable/Disable FirewallD and Iptables Firewall in Linux
+
+
+
+10 lsof Command Examples in Linux
+
+
+
+Join TecMint Weekly Newsletter
+
+If You Appreciate What We Do Here On TecMint, You Should Consider:
+
+
+
+Support Us
+
+
+
+
+
+freestar
+
+Linux Server Monitoring Tools
+
+Observium: A Complete Network Management and Monitoring System for RHEL/CentOS
+
+
+
+Use Glances to Monitor Remote Linux in Web Server Mode
+
+
+
+How to Monitor User Activity with psacct or acct Tools
+
+
+
+Understand Linux Load Averages and Monitor Performance of Linux
+
+
+
+How to Limit Network Bandwidth Usage in Linux Using Trickle
+
+
+
+Perf- A Performance Monitoring and Analysis Tool for Linux
+
+
+
+Learn Linux Tricks & Tips
+
+Learn How to Set Your $PATH Variables Permanently in Linux
+
+
+
+10 Commands to Collect System and Hardware Info in Linux
+
+
+
+3 Ways to Find Out Which Process Listening on a Particular Port
+
+
+
+How to Christmassify Your Linux Terminal and Shell
+
+
+
+How to Search and Remove Directories Recursively on Linux
+
+
+
+How to Encrypt and Decrypt Files and Directories Using Tar and OpenSSL
+
+
+
+Best Linux Tools
+
+4 Best Linux Apps for Downloading Movie Subtitles
+
+
+
+Top 5 Open-Source Project Management Tools for Linux
+
+
+
+30 Best File Managers for Linux Systems
+
+
+
+Top 7 Apps to Install for Your Nextcloud Instance
+
+
+
+4 Open Source Log Monitoring and Management Tools for Linux
+
+
+
+23 Best Open Source Text Editors (GUI + CLI) in 2021
+
+
+
+Donate to TecMintContact UsAdvertise on TecMintLinux ServicesCop
